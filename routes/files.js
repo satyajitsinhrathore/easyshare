@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
 })
 
 router.post('/send', async(req, res) => {
-    const {uuid, emailTo, emailFrom }= req.body;
+    const {uuid, emailTo, emailFrom } = req.body;
 
     // validate request
     if(!uuid || !emailTo || !emailFrom){
@@ -77,7 +77,7 @@ router.post('/send', async(req, res) => {
     sendMail({
         from: emailFrom,
         to: emailTo,
-        subject: 'file Sharing',
+        subject: 'Easy file Sharing',
         text: `${emailFrom} Shared a file with you.`,
         html: require('../services/emailTemplate')({
             emailFrom: emailFrom,
